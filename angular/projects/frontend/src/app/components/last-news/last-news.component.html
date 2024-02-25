@@ -1,0 +1,7 @@
+<div class="right_news" *ngFor="let lastnews of posts">
+    <a routerLink="/post/detail/{{lastnews.slug}}">
+        <img [src]="lastnews.mainImageUrl" alt="{{lastnews.title}}">
+        <span>{{ getFormattedDate(lastnews.createdOn) }}</span>
+        <p>{{lastnews.title}}</p>
+    </a>
+</div>

@@ -1,0 +1,65 @@
+<div class="top_header">
+    <div class="top_header_div">
+        <div class="top_header_div_left">
+            <div *ngFor="let topHeadertitle of topHeader">
+                <a routerLink="{{topHeadertitle.link}}">{{topHeadertitle.title}}</a>
+            </div>
+        </div>
+        <div class="top_header_div_right">
+            <a href=""><i class="fa-brands fa-facebook fa-l"></i></a>
+            <a href=""><i class="fa-brands fa-instagram fa-l"></i></a>
+            <a href=""><i class="fa-brands fa-tiktok fa-l"></i></a>
+            <a href=""><i class="fa-brands fa-youtube fa-l"></i></a>
+        </div>
+    </div>
+</div>
+<header class="header">
+    <div class="header_div">
+        <nav class="header_nav">
+            <ul class="header_left">
+                <li>
+                    <a routerLink="/home">
+                        <img class="header_logo" src="../../assets/news.png" alt="">
+                    </a>
+                </li>
+                <hr>
+            </ul>
+            
+            <ul class="header_right">
+                    <div *ngFor="let c of cats">
+                        <li><a routerLink="/post/category/{{c.title}}">{{c.title}}</a></li>
+                    </div>
+                <li class="input">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="ძებნა">
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<nav class="navbar">
+    <div class="navbar-container container">
+        <input type="checkbox" name="" id="">
+        <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </div>
+        <ul class="menu-items">
+            <div *ngFor="let c of cats">
+                <li><a routerLink="/post/category/{{c.title}}">{{c.title}}</a></li>
+            </div>
+        </ul>
+        
+    </div>
+    <div class="respos_header_logo_div">
+        <a href=""><img src="../../assets/news.png" alt=""></a>
+
+    </div>
+</nav>
+
+
+  
+
+
+

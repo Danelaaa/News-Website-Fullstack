@@ -1,0 +1,28 @@
+ <ng-container *ngIf="post | async as p">
+    <div class="news_main">
+        <div class="news_main_div">
+            <div class="news_main_left">
+                <div class="title">
+                    <h2>{{p.title}}</h2>
+                    <a class="badge bg-secondary text-decoration-none link-light" routerLink="/post/category/{{p.title}}">{{p.category.title}}</a>
+                    <span class="text-muted fst-italic mb-2">{{p.createdOn | date: 'medium'}} by {{p.user.firstname}} {{p.user.lastname}}</span>
+                </div>
+                <div class="news">
+                    <div class="news_left">
+                        <p>10 <br>Shares</p>
+                        <i class="fa-brands fa-facebook-f fa-lg"></i>
+                        <i class="fa-solid fa-link fa-lg"></i>
+                    </div>
+                    <div class="news_right">
+                        <img [src]="p.mainImageUrl" alt="{{p.title}}">
+                        <p>{{p.content}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="news_main_right">
+                <h3>უახლესი ნიუსები</h3>
+                <app-last-news></app-last-news>
+            </div>
+        </div>
+    </div>
+</ng-container>

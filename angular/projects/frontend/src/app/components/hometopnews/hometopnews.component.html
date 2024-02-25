@@ -1,0 +1,25 @@
+<div class="main_last_news">
+    <div class="div">
+        <div class="left" *ngFor="let p of posts">
+            <p>ბოლო <br> სიახლე</p>
+            <a routerLink="/post/detail/{{p.slug}}">
+                <img [src]="p.mainImageUrl" alt="{{p.title}}">
+                <div class="left_title">
+                    <h6>{{ getFormattedDate(p.createdOn) }}</h6>
+                    <h4>{{p.title}}</h4>
+                </div>
+            </a>
+        </div>
+        <div class="right">
+            <div class="right_top" *ngFor="let p of TwoPost">
+                <a routerLink="/post/detail/{{p.slug}}">
+                    <img [src]="p.mainImageUrl" alt="{{p.title}}">
+                    <div class="right_title">
+                        <h6>{{ getFormattedDate(p.createdOn) }}</h6>
+                        <h4>{{p.title}}</h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
